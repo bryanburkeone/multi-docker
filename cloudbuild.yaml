@@ -9,17 +9,17 @@ steps:
     args: [ 'build', '-t', 'bryanburke/multi-worker', './worker' ]
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'image', 'ls' ]
-#  - name: 'gcr.io/cloud-builders/docker'
-#    args: ['push', 'bryanburke/multi-client']
-#  - name: 'gcr.io/cloud-builders/docker'
-#    args: ['push', 'bryanburke/multi-nginx']
-#  - name: 'gcr.io/cloud-builders/docker'
-#    args: ['push', 'bryanburke/multi-server']
-#  - name: 'gcr.io/cloud-builders/docker'
-#    args: ['push', 'bryanburke/multi-worker']
-#images: [
-#  'bryanburke/multi-client',
-#  'bryanburke/multi-nginx',
-#  'bryanburke/multi-server',
-#  'bryanburke/multi-worker'
-#]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'bryanburke/multi-client:latest']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'bryanburke/multi-nginx:latest']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'bryanburke/multi-server:latest']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'bryanburke/multi-worker:latest']
+images: [
+  'bryanburke/multi-client:latest',
+  'bryanburke/multi-nginx:latest',
+  'bryanburke/multi-server:latest',
+  'bryanburke/multi-worker:latest'
+]
