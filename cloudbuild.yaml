@@ -1,0 +1,9 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'bryanburke/multi-client', './client' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'bryanburke/multi-nginx', './nginx' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'bryanburke/multi-server', './server' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'bryanburke/multi-worker', './worker' ]
