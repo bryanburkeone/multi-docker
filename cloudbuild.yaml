@@ -7,3 +7,9 @@ steps:
     args: [ 'build', '-t', 'bryanburke/multi-server', './server' ]
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', 'bryanburke/multi-worker', './worker' ]
+images: [
+  'bryanburke/multi-client',
+  'bryanburke/multi-nginx',
+  'bryanburke/multi-server',
+  'bryanburke/multi-worker'
+]
