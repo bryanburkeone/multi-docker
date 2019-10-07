@@ -1,25 +1,23 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'bryanburke/multi-client', './client' ]
+    args: [ 'build', '-t', 'gcr.io/rapid-jaguar-prisma/multi-client', './client' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'bryanburke/multi-nginx', './nginx' ]
+    args: [ 'build', '-t', 'gcr.io/rapid-jaguar-prisma/multi-nginx', './nginx' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'bryanburke/multi-server', './server' ]
+    args: [ 'build', '-t', 'gcr.io/rapid-jaguar-prisma/multi-server', './server' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'bryanburke/multi-worker', './worker' ]
+    args: [ 'build', '-t', 'gcr.io/rapid-jaguar-prisma/multi-worker', './worker' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'image', 'ls' ]
+    args: ['push', 'gcr.io/rapid-jaguar-prisma/multi-client']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'bryanburke/multi-client:latest']
+    args: ['push', 'gcr.io/rapid-jaguar-prisma/multi-nginx']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'bryanburke/multi-nginx:latest']
+    args: ['push', 'gcr.io/rapid-jaguar-prisma/multi-server']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'bryanburke/multi-server:latest']
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'bryanburke/multi-worker:latest']
+    args: ['push', 'gcr.io/rapid-jaguar-prisma/multi-worker']
 images: [
-  'bryanburke/multi-client:latest',
-  'bryanburke/multi-nginx:latest',
-  'bryanburke/multi-server:latest',
-  'bryanburke/multi-worker:latest'
+  'gcr.io/rapid-jaguar-prisma/multi-client',
+  'gcr.io/rapid-jaguar-prisma/multi-nginx',
+  'gcr.io/rapid-jaguar-prisma/multi-server',
+  'gcr.io/rapid-jaguar-prisma/multi-worker'
 ]
